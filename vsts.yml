@@ -84,7 +84,8 @@ jobs:
 
   - bash: |
       cd src
-      ninja -C out/Default electron:electron_app
+      echo "Running with extra args: $NINJA_EXTRA_ARGS"
+      ninja -C out/Default electron:electron_app $NINJA_EXTRA_ARGS
     displayName: Ninja build app
     timeoutInMinutes: 100  # Can take up to 80 minutes without compiler cache.
 
